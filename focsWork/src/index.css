@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+  @layer components {
+    .animate{
+      display: flex;
+      animation: scroll 30s linear infinite;
+    }
+    .animate-reversed{
+      display: flex;
+      animation: scroll 30s linear infinite;
+      animation-direction: reverse;
+    }
+  
+    @keyframes scroll {
+      0%{
+  
+        transform: translateX(0);
+      }
+      100%{
+  
+        transform: translate(-70%);
+      }
+    }
+  
+  } 
+
+  .content-transition {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.5ms ease-in-out;
+    will-change: opacity, transform;
+  }
+  
+  .content-transition.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+     
